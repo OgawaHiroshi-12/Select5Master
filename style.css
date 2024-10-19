@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f0ff;
+    text-align: center;
+    color: #ff6600;
+}
+
+#character-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.character-card {
+    width: 80px;
+    cursor: pointer;
+}
+
+.character-card img {
+    width: 100%;
+    transition: filter 0.3s ease;
+}
+
+.dark {
+    filter: brightness(30%);
+}
+
+.bright {
+    filter: brightness(100%);
+}
+
+button#readyButton {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(orange, red);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+button#readyButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
