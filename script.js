@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // キャラクターリストの情報（キャラクターの名前や画像パスなどを含む）
     // 各キャラクターには暗い画像と明るい画像があり、選択状態によって表示が切り替わる
     const characterList = [
-        { id: 1, name: "マリオ", imgPath: "Select5Master/images/ssbudatab/1.mariob.jpg", brightImgPath: "Select5Master/images/ssbudata/1.mario.jpg" },
-        { id: 2, name: "ドンキーコング", imgPath: "Select5Master/images/ssbudatab/2.donki-kongub.jpg", brightImgPath: "Select5Master/images/ssbudata/2.donki-kongu.jpg" },
+        { id: 1, name: "マリオ", imgPath: "Select5Master/images/ssbudatab/1.mariob.jpg", brightImgPath: "Select5Master/images/ssbudatab/1.mariob.jpg" },
+        { id: 2, name: "ドンキーコング", imgPath: "Select5Master/images/ssbudatab/2.donki-kongu.jpg", brightImgPath: "Select5Master/images/ssbudata/2.donki-kongub.jpg" },
         { id: 3, name: "リンク", imgPath: "Select5Master/images/ssbudatab/3.rinkub.jpg", brightImgPath: "Select5Master/images/ssbudata/3.rinku.jpg" },
         { id: 4, name: "サムス", imgPath: "Select5Master/images/ssbudatab/4.samusub.jpg", brightImgPath: "Select5Master/images/ssbudata/4.samusu.jpg" },
         { id: 4, name: "ダークサムス", imgPath: "Select5Master/images/ssbudatab/4.da-kusamusub.jpg", brightImgPath: "Select5Master/images/ssbudata/4.da-kusamusu.jpg" },
