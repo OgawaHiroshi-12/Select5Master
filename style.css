@@ -23,11 +23,11 @@ body {
     transition: filter 0.3s ease;
 }
 
-.dark {
+.dark img {
     filter: brightness(30%);
 }
 
-.bright {
+.bright img {
     filter: brightness(100%);
 }
 
@@ -36,11 +36,18 @@ button#readyButton {
     padding: 15px 30px;
     font-size: 18px;
     color: white;
-    background: linear-gradient(orange, red);
+    background-image: url('images/button.jpg');
+    background-size: cover;
     border: none;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
+
+button#readyButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 
 button#readyButton:disabled {
     opacity: 0.5;
