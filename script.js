@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // キャラクターリストの情報（キャラクターの名前や画像パスなどを含む）
     // 各キャラクターには暗い画像と明るい画像があり、選択状態によって表示が切り替わる
     const characterList = [
-        { id: 1, name: "マリオ", imgPath: "images/ssbudatab/1.mariob.jpg", brightImgPath: "images/ssbudata/1.mario.jpg" },
+        { id: 1, name: "マリオ", imgPath: "https://OgawaHiroshi-12.github.io/Select5Master/images/ssbudatab/1.mariob.jpg", brightImgPath: "https://OgawaHiroshi-12.github.io/Select5Master/images/ssbudata/1.mario.jpg" },
         { id: 2, name: "ドンキーコング", imgPath: "images/ssbudatab/2.donki-kongub.jpg", brightImgPath: "images/ssbudata/2.donki-kongu.jpg" },
         { id: 3, name: "リンク", imgPath: "images/ssbudatab/3.rinkub.jpg", brightImgPath: "images/ssbudata/3.rinku.jpg" },
         { id: 4, name: "サムス", imgPath: "images/ssbudatab/4.samusub.jpg", brightImgPath: "images/ssbudata/4.samusu.jpg" },
