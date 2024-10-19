@@ -1,55 +1,65 @@
+/* body 要素のスタイル設定。全体のフォントや背景色、文字の色を指定している。 */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e6f0ff;
-    text-align: center;
-    color: #ff6600;
+    font-family: Arial, sans-serif;  /* フォントを Arial と、サポートがない場合は sans-serif に指定 */
+    background-color: #e6f0ff;  /* 背景色を明るい青に設定 */
+    text-align: center;  /* テキストを中央揃えにする */
+    color: #ff6600;  /* 全体の文字色をオレンジに設定 */
 }
 
+/* ID "character-container" に対するスタイル。キャラクターのカードをグリッド形式で配置する設定。 */
 #character-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    display: grid;  /* グリッドレイアウトを使用してアイテムを整列 */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));  /* 自動調整のカラム数、幅が最小 100px で1列ずつ展開 */
+    gap: 10px;  /* 各グリッドアイテムの間に 10px の間隔を設定 */
+    margin-top: 20px;  /* 上部に 20px の余白を追加 */
+    justify-items: center;  /* 各アイテムをグリッド内で中央に揃える */
 }
 
+/* キャラクターのカード全体のスタイルを定義。 */
 .character-card {
-    width: 80px;
-    cursor: pointer;
+    width: 150px;  /* カードの幅を 100px に設定 */
+    height: 150px;  /* カードの高さを 100px に設定 */
+    cursor: pointer;  /* カーソルをカード上に持ってくるとポインタの形に変更 */
 }
 
+/* キャラクターカード内の画像に対するスタイル設定。 */
 .character-card img {
-    width: 100%;
-    transition: filter 0.3s ease;
+    width: 100%;  /* 画像の幅をカード全体に合わせる */
+    height: 100%;  /* 画像の高さもカード全体に合わせる */
+    object-fit: cover;  /* 画像のアスペクト比を維持して、カードの枠に収まるようにカバー */
+    transition: filter 0.3s ease;  /* 画像のフィルターの変化を 0.3 秒かけてスムーズに行う */
 }
 
+/* ダークモードのクラスがついた画像を暗くするスタイル。 */
 .dark img {
-    filter: brightness(30%);
+    filter: brightness(5%);  /* 画像を 5% の明るさに設定して暗くする */
 }
 
+/* ブライトモードのクラスがついた画像を明るくするスタイル。 */
 .bright img {
-    filter: brightness(100%);
+    filter: brightness(100%);  /* 画像を通常の明るさ（100%）に設定 */
 }
 
+/* ID "readyButton" に対するボタンのスタイル設定。 */
 button#readyButton {
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: white;
-    background-image: url('images/button.jpg');
-    background-size: cover;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
+    margin-top: 20px;  /* 上に 20px の余白を追加 */
+    padding: 15px 30px;  /* 上下に 15px、左右に 30px の余白を追加してサイズを調整 */
+    font-size: 18px;  /* ボタンの文字サイズを 18px に設定 */
+    color: white;  /* ボタンの文字色を白に設定 */
+    background-image: url('images/button.jpg');  /* ボタンの背景として画像を使用 */
+    background-size: cover;  /* 画像をボタン全体に適用する */
+    border: none;  /* ボタンの枠線をなくす */
+    cursor: pointer;  /* ボタン上にカーソルがあるときポインタの形に変更 */
+    transition: transform 0.2s ease, opacity 0.3s ease;  /* 拡大・縮小と不透明度の変化をスムーズに */
 }
 
-button#readyButton:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+/* ボタンにマウスホバー時のスタイルを指定。無効化されていない場合に適用。 */
+button#readyButton:hover:not(:disabled) {
+    transform: scale(1.05);  /* ボタンを少し大きくする（1.05倍） */
 }
 
-
+/* 無効化されているボタンのスタイルを指定。 */
 button#readyButton:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    opacity: 0.5;  /* ボタンの不透明度を下げて視覚的に無効であることを示す */
+    cursor: not-allowed;  /* カーソルを「使用不可」の形にする */
 }
