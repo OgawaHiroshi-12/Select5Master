@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (charCard.classList.contains("bright")) {
                 charCard.classList.remove("bright");
                 charCard.classList.add("disabled");
-                img.src = "images/x.jpg"; // ×の画像
+                img.src = img.src = "https://raw.githubusercontent.com/OgawaHiroshi-12/Select5Master/main/images/x.jpg";
             } else {
                 charCard.classList.remove("disabled");
                 charCard.classList.add("dark");
