@@ -113,7 +113,7 @@ button#readyButton {
     background-size: cover;  /* 画像をボタン全体に適用する */
     border: none;  /* ボタンの枠線をなくす */
     cursor: pointer;  /* ボタン上にカーソルがあるときポインタの形に変更 */
-    transition: transform 0.2s ease, opacity 0.3s ease;  /* 拡大・縮小と不透明度の変化をスムーズに */
+    transition: transform 0.1s ease, opacity 0.2s ease;  /* 拡大・縮小と不透明度の変化をスムーズに */
 }
 
 /* ボタンにマウスホバー時のスタイルを指定。無効化されていない場合に適用。 */
@@ -165,12 +165,14 @@ button#readyButton:disabled {
     .character-card {
         width: 80px;  /* キャラクターのサイズを小さく */
         height: 80px;
-        margin: 5px;
+        margin: 3px;
     }
 
     button#readyButton {
         width: 500px;  /* ボタンの幅を縮小 */
         height: 100px;  /* ボタンの高さを縮小 */
-        /*margin-top: 10px;  /* ボタンの位置を上に */
+        margin: 10px auto;  /* ボタンを中央に配置 */
+        display: block;  /* 中央配置のためにblock要素に */
     }
 }
+
