@@ -1,38 +1,103 @@
 /* body 要素のスタイル設定。全体のフォントや背景色、文字の色を指定している。 */
 body {
-    font-family: Arial, sans-serif;  /* フォントを Arial と、サポートがない場合は sans-serif に指定 */
-    background-color: #e6f0ff;  /* 背景色を明るい青に設定 */
-    text-align: center;  /* テキストを中央揃えにする */
-    color: #ff6600;  /* 全体の文字色をオレンジに設定 */
+    font-family: Arial, sans-serif;
+    background-color: #e6f0ff;
+    text-align: center;
+    color: #ff6600;
 }
+
+h1 {
+    font-size: 60px;
+    color: #ff6600;
+    text-shadow: 3px 3px 6px #333;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.2;
+}
+.select-container {
+    display: flex; /* ラベルとセレクトボックスを横並びにする */
+    align-items: center; /* ラベルとセレクトボックスを中央揃えにする */
+    justify-content: start; /* 左寄せにする */
+    margin-top: 10px; /* 上に少し余白を追加 */
+    margin-left: 10px; /* 左に余白を追加 */
+}
+
+.select-label {
+    font-size: 18px; /* ラベルのフォントサイズを設定 */
+    margin-right: 10px; /* ラベルとセレクトボックスの間に余白を設定 */
+    color: #333; /* ラベルの文字色を設定 */
+}
+
+#maxCharacterSelect {
+    font-size: 14px; /* セレクトボックスの文字サイズを設定 */
+    padding: 5px; /* 内側に余白を追加して見た目を調整 */
+    border: 1px solid #333; /* セレクトボックスの枠線を設定 */
+    background-color: #e6f0ff; /* 背景色をページと合わせる */
+    color: #333; /* 文字色を設定 */
+}
+
+.title-main {
+    display: block;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px #333; /* より深い影をつけて立体感を出す */
+}
+
+.title-sub {
+    display: block;
+    font-style: italic;
+    text-shadow: 3px 3px 8px #333; /* サブタイトルにも影をつける */
+    font-size: 50px; /* 少し小さめのサイズ */
+}
+
+.author {
+    font-size: 15px;
+    color: #333;
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
 
 /* ID "character-container" に対するスタイル。キャラクターのカードをグリッド形式で配置する設定。 */
 #character-container {
     display: grid;  /* グリッドレイアウトを使用してアイテムを整列 */
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));  /* 自動調整のカラム数、幅が最小 100px で1列ずつ展開 */
-    gap: 10px;  /* 各グリッドアイテムの間に 10px の間隔を設定 */
-    margin-top: 20px;  /* 上部に 20px の余白を追加 */
+    gap: 5px;  /* 各グリッドアイテムの間に 10px の間隔を設定 */
+    margin-top: 10px;  /* 上部に 20px の余白を追加 */
     justify-items: center;  /* 各アイテムをグリッド内で中央に揃える */
 }
 
 /* キャラクターのカード全体のスタイルを定義。 */
 .character-card {
-    width: 100px;  /* カードの幅を 100px に設定 */
-    height: 100px;  /* カードの高さを 100px に設定 */
-    cursor: pointer;  /* カーソルをカード上に持ってくるとポインタの形に変更 */
+    position: relative; /* 位置を基準に子要素を配置 */
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    overflow: hidden; /* 画像が枠からはみ出さないように */
 }
 
-/* キャラクターカード内の画像に対するスタイル設定。 */
-.character-card img {
-    width: 100%;  /* 画像の幅をカード全体に合わせる */
-    height: 100%;  /* 画像の高さもカード全体に合わせる */
-    object-fit: cover;  /* 画像のアスペクト比を維持して、カードの枠に収まるようにカバー */
-    transition: filter 0.3s ease;  /* 画像のフィルターの変化を 0.3 秒かけてスムーズに行う */
+.character-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.x-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 画像のアスペクト比を保ちながら表示 */
+    pointer-events: none; /* バツの画像がクリックを妨げないように */
+    opacity: 1;
+    z-index: 1; /* 暗い画像の上に表示するためのレイヤー設定 */
 }
 
 /* ダークモードのクラスがついた画像を暗くするスタイル。 */
 .dark img {
-    filter: brightness(70%);  /* 画像を 70% の明るさに設定して暗くする */
+    filter: brightness(100%);  /* 画像を 5% の明るさに設定して暗くする */
 }
 
 /* ブライトモードのクラスがついた画像を明るくするスタイル。 */
@@ -42,11 +107,9 @@ body {
 
 /* ID "readyButton" に対するボタンのスタイル設定。 */
 button#readyButton {
-    margin-top: 20px;  /* 上に 20px の余白を追加 */
-    padding: 15px 30px;  /* 上下に 15px、左右に 30px の余白を追加してサイズを調整 */
     font-size: 18px;  /* ボタンの文字サイズを 18px に設定 */
-    color: white;  /* ボタンの文字色を白に設定 */
-    background-image: url('images/button.jpg');  /* ボタンの背景として画像を使用 */
+    color: transparent;  /* ボタンの文字色を白に設定 */
+    background-image: url('https://raw.githubusercontent.com/OgawaHiroshi-12/Select5Master/main/images/button.png');  /* ボタンの背景として画像を使用 */
     background-size: cover;  /* 画像をボタン全体に適用する */
     border: none;  /* ボタンの枠線をなくす */
     cursor: pointer;  /* ボタン上にカーソルがあるときポインタの形に変更 */
@@ -63,3 +126,33 @@ button#readyButton:disabled {
     opacity: 0.5;  /* ボタンの不透明度を下げて視覚的に無効であることを示す */
     cursor: not-allowed;  /* カーソルを「使用不可」の形にする */
 }
+#readyButton {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* ボタンをコンテナ幅に合わせる */
+    max-width: 1600px; /* 必要に応じてボタンの最大幅を設定 */
+    height: 350px; /* 高さを画像に合わせて調整 */
+    margin: 1px auto; /* 中央揃え */
+    background-color: transparent; /* 画像が読み込まれない場合の背景色 */
+    background-image: url('https://raw.githubusercontent.com/OgawaHiroshi-12/Select5Master/main/images/button.png'); /* 背景画像を設定 */
+    background-size: contain; /* 背景画像をボタン内に収める */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 背景画像が繰り返されないように設定 */
+    border: none; /* ボーダーなし */
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: transparent; /* 文字を透明にして非表示 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#readyButton:hover:not(:disabled) {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+#readyButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
