@@ -167,12 +167,15 @@ button#readyButton:disabled {
         height: 80px;
         margin: 3px;
     }
+    
+    #readyButtonContainer {
+        text-align: center; /* ボタンを中央揃え */
+    }
 
     button#readyButton {
         width: 500px;  /* ボタンの幅を縮小 */
-        height: 100px;  /* ボタンの高さを縮小 */
-        margin: 10px auto;  /* ボタンを中央に配置 */
-        display: block;  /* 中央配置のためにblock要素に */
+        height: 150px;  /* ボタンの高さを縮小 */
+        margin-top: 10px;  /* 上部の余白 */
     }
 }
 
