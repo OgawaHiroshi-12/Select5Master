@@ -168,14 +168,16 @@ button#readyButton:disabled {
         gap: 1px;
         justify-content: center; /* キャラクターを中央揃え */
     }
-    #readyButtonContainer {
-        text-align: center; /* ボタンを中央揃え */
+
+    .character-card {
+        width: 70px;
+        height: 70px;
     }
 
     button#readyButton {
-        width: 450px;  /* ボタンの幅を縮小 */
-        height: 180px;  /* ボタンの高さを縮小 */
-        margin-top: 5px;  /* 上部の余白 */
+        width: 450px;
+        height: 180px;
+        margin-top: 1px;
     }
 }
 
