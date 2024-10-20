@@ -8,14 +8,23 @@
 </head>
 <body>
     <div id="app">
-        <h1>おま5 Tooool!!</h1>
-        <select id="maxCharacterSelect">
-            <option value="20" selected>お選びください</option>
-            <!-- 0-80までのオプションをJavaScriptで生成 -->
-        </select>
-        <div id="character-container">
-            <!-- キャラクターの画像をJavaScriptで生成 -->
+        <!-- メインのタイトル表示 -->
+        <h1>
+            <span class="title-main">おま5</span>
+            <span class="title-sub">Tooooooooool!!</span>
+        </h1>
+        <p class="author">製作者@ogashi_hayaoki</p>
+        
+        <!-- ドロップダウンメニューのラベルと選択 -->
+        <div class="select-container">
+            <label for="maxCharacterSelect" class="select-label">MAXCharacter</label>
+            <select id="maxCharacterSelect">
+                <option value="0" selected>お選びください</option>
+            </select>
+            <span id="remainingMessage" class="remaining-message"></span>
         </div>
+
+        <div id="character-container"></div>
         <button id="readyButton" disabled>READY TO FIGHT!</button>
     </div>
     <script src="script.js"></script>
